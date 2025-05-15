@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Important: Before this will work on GitHub, you must:
+# 1. Go to your repository -> Settings -> Actions -> General
+# 2. Under "Workflow permissions" select "Read and write permissions"
+# 3. Click "Save"
+
 on:
   push:
     branches:
@@ -8,6 +13,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Add permissions for GitHub token
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,6 +29,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
