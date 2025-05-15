@@ -22,9 +22,7 @@ This repository contains a simple MLOps portfolio website that is automatically 
 
 ## Deployed Site
 
-You can view the live site at: https://YOUR_GITHUB_USERNAME.github.io/gh-pages-demo/
-
-(Replace YOUR_GITHUB_USERNAME with your actual GitHub username after deployment)
+You can view the live site at: https://m-muddasir.github.io/gh-pages-demo/
 
 ## Local Development
 
